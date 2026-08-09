@@ -1,0 +1,23 @@
+---
+import { Font } from "astro:assets";
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: "example" },
+      cacheKey: "unchanged",
+    },
+  ];
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Incremental font hash reproduction</title>
+    <Font cssVariable="--font-primary" preload />
+  </head>
+  <body>
+    <h1>Unchanged page</h1>
+  </body>
+</html>
